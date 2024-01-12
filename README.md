@@ -2,35 +2,28 @@
 
 ## Counter
 
-Select is a customizable select dropdown component built with React and Tailwind CSS. It supports features like searching, custom styles, and automatic text truncation with ellipsis.
+The Counter component is a customizable React component that provides a simple numeric counter functionality. It includes increment and decrement buttons, and displays a count value. This component is highly customizable with various props, making it suitable for different use cases where a numeric counter is needed.
 
 ### Installation
 
-`npm install @architecturex/components.select`
+`npm install @architecturex/components.counter`
 
 ### Usage
 
 ```javascript
 import React from 'react'
-import Select from '@architecturex/components.select'
+import Counter from '@architecturex/components.counter'
 
-const App = () => {
-  const options = [
-    { label: 'Option 1', value: '1', selected: false },
-    { label: 'Option 2', value: '2', selected: true },
-    { label: 'Option 3', value: '3', selected: false }
-  ]
-
-  const handleSelectionChange = (value) => {
-    console.log('Selected:', value)
-  }
-
+function App() {
   return (
-    <SelectComponent
-      label="Select an Option"
-      options={options}
-      onSelectionChange={handleSelectionChange}
-    />
+    <div>
+      <Counter
+        label="Quantity"
+        incrementClick={() => console.log('Incremented')}
+        decrementClick={() => console.log('Decremented')}
+        spaces={2}
+      />
+    </div>
   )
 }
 
@@ -39,13 +32,10 @@ export default App
 
 ### Props
 
-- **label (string):** Optional. Label for the select component.
-- **options (Array of Option objects):** Required. Options for the dropdown.
-- **placeholder (string):** Optional. Placeholder text for the select button.
-- **onSelectionChange (function):** Optional. Callback function when an option is selected.
-- **style (CSSProperties):** Optional. Custom styles for the select component.
-- **ellipsisLength (number):** Optional. Maximum length of option text before truncation. Default is 14.
-- **searchable (boolean):** Optional. Enables a search input to filter options.
+- **label**: The label displayed next to the counter
+- **decrementClick:** Callback function for the decrement button
+- **incrementClick:** function Callback function for the increment button
+- **spaces:** Number of spaces between label and counter
 
 ### Contribution
 
