@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react'
-import cx from '@architecturex/utils.cx'
 
 type Props = {
   label: string
