@@ -1,7 +1,7 @@
 import cx from '@architecturex/utils.cx'
 
 export const styles = {
-  wrapper: 'h-10 flex items-center w-[135px]',
+  wrapper: 'h-10 flex items-center',
   container: 'flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1',
   decrement: 'bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none',
   dash: 'm-auto text-2xl font-thin',

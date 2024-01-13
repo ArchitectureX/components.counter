@@ -32,7 +32,7 @@ const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0 
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={{ width: '135px' }}>
       <div className={styles.container}>
         <button
           data-action="decrement"
