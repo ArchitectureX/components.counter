@@ -6,13 +6,14 @@ type Props = {
   onChange?: (value: number) => void
   spaces?: number
   style?: CSSProperties
+  max?: number
 }
 
-const Counter: FC<Props> = ({ label, spaces = 0, onChange, style = { width: '135px' } }) => {
+const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { width: '135px' } }) => {
   const [count, setCount] = useState<number>(0)
 
   const increment = () => {
-    if (count < 99) {
+    if (count < max) {
       setCount((prevCount) => prevCount + 1)
       onChange && onChange(count + 1)
     }
