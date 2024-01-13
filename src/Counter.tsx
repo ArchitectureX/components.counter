@@ -1,23 +1,18 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, CSSProperties } from 'react'
 import { styles } from './styles'
 
 type Props = {
   label: string
-  decrementClick?: () => void
-  incrementClick?: () => void
   onChange?: (value: number) => void
   spaces?: number
+  style?: CSSProperties
 }
 
-const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0, onChange }) => {
+const Counter: FC<Props> = ({ label, spaces = 0, onChange, style = { width: '135px' } }) => {
   const [count, setCount] = useState<number>(0)
 
   const increment = () => {
     if (count < 99) {
-      if (incrementClick) {
-        incrementClick()
-      }
-
       setCount((prevCount) => prevCount + 1)
       onChange && onChange(count + 1)
     }
@@ -25,17 +20,13 @@ const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0,
 
   const decrement = () => {
     if (count > 0) {
-      if (decrementClick) {
-        decrementClick()
-      }
-
       setCount((prevCount) => prevCount - 1)
       onChange && onChange(count - 1)
     }
   }
 
   return (
-    <div className={styles.wrapper} style={{ width: '135px' }}>
+    <div className={styles.wrapper} style={style}>
       <div className={styles.container}>
         <button
           data-action="decrement"
