@@ -1,13 +1,14 @@
 import cx from '@architecturex/utils.cx'
 
 export const styles = {
-  label: 'block text-gray-700 text-sm font-bold mb-2 text-left dark:text-gray-300',
-  button:
-    'border border-gray-300 px-4 p-2 rounded w-full text-left text-sm overflow-hidden whitespace-nowrap text-overflow-ellipsis dark:bg-gray-700 dark:border-gray-600',
-  openDiv:
-    'absolute bg-white border border-gray-400 mt-1 rounded w-full z-10 dark:bg-gray-800 dark:border-gray-600',
-  input: 'px-4 py-2 w-full text-sm dark:bg-gray-700 dark:text-gray-300',
-  li: 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-left text-gray-600 text-sm dark:text-gray-300 dark:hover:bg-gray-900'
+  wrapper: 'h-10 flex items-center w-[135px]',
+  container: 'flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1',
+  decrement: 'bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none',
+  dash: 'm-auto text-2xl font-thin',
+  input: 'focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-base cursor-default flex items-center text-gray-700 outline-none',
+  increment: 'bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer',
+  add: 'm-auto text-2xl font-thin',
+  span: 'ml-2'
 }
 
 export const tailwindClasses = cx.extract(styles)
