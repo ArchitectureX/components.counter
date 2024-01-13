@@ -5,10 +5,11 @@ type Props = {
   label: string
   decrementClick?: () => void
   incrementClick?: () => void
+  onChange?: (value: number) => void
   spaces?: number
 }
 
-const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0 }) => {
+const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0, onChange }) => {
   const [count, setCount] = useState<number>(0)
 
   const increment = () => {
@@ -18,6 +19,7 @@ const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0 
       }
 
       setCount((prevCount) => prevCount + 1)
+      onChange && onChange(count + 1)
     }
   }
 
@@ -28,6 +30,7 @@ const Counter: FC<Props> = ({ label, decrementClick, incrementClick, spaces = 0 
       }
 
       setCount((prevCount) => prevCount - 1)
+      onChange && onChange(count - 1)
     }
   }
 
