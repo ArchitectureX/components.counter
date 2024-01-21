@@ -1,3 +1,4 @@
+export default () => `
 import React, { FC, useState, CSSProperties } from 'react'
 import { styles } from './styles'
 
@@ -27,18 +28,18 @@ const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { w
   }
 
   return (
-    <div className={styles.wrapper} style={style}>
-      <div className={styles.container}>
+    <div className="h-10 flex items-center" style={style}>
+      <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
         <button
           data-action="decrement"
-          className={styles.decrement}
+          className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
           onClick={decrement}
         >
-          <span className={styles.dash}>−</span>
+          <span className="m-auto text-2xl font-thin">−</span>
         </button>
         <input
           type="number"
-          className={styles.input}
+          className="focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-base cursor-default flex items-center text-gray-700 outline-none"
           name="custom-input-number"
           value={count}
           readOnly
@@ -46,14 +47,14 @@ const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { w
         />
         <button
           data-action="increment"
-          className={styles.increment}
+          className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
           onClick={increment}
         >
-          <span className={styles.add}>+</span>
+          <span className="m-auto text-2xl font-thin">+</span>
         </button>
       </div>
 
-      <span className={styles.span}>
+      <span className="ml-2">
         {label}
         {'\u00A0'.repeat(spaces)}
       </span>
@@ -62,3 +63,4 @@ const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { w
 }
 
 export default Counter
+`
