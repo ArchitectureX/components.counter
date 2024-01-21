@@ -1,6 +1,5 @@
 export default () => `
 import React, { FC, useState, CSSProperties } from 'react'
-import { styles } from './styles'
 
 type Props = {
   label: string
@@ -9,6 +8,8 @@ type Props = {
   style?: CSSProperties
   max?: number
 }
+
+const nbsp = '\u00A0'
 
 const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { width: '135px' } }) => {
   const [count, setCount] = useState<number>(0)
@@ -56,7 +57,7 @@ const Counter: FC<Props> = ({ label, spaces = 0, onChange, max = 99, style = { w
 
       <span className="ml-2">
         {label}
-        {'\u00A0'.repeat(spaces)}
+        {nbsp.repeat(spaces)}
       </span>
     </div>
   )
