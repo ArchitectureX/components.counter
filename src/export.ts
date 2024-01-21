@@ -2,11 +2,11 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { getComponentAsString } from './index'
 
-const componentName = 'Counter.tsx'
+const componentName = 'Counter'
 
 function exportComponent(destination: string): void {
   const componentCode = getComponentAsString()
-  const filePath = path.join(destination, componentName)
+  const filePath = path.join(destination, `${componentName}/index.tsx`)
 
   fs.writeFileSync(filePath, componentCode, 'utf8')
 
