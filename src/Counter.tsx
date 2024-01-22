@@ -1,5 +1,4 @@
-export default () => `
-import React, { FC, useState, CSSProperties } from 'react'
+export default () => `import React, { FC, useState, CSSProperties } from 'react'
 
 type Props = {
   label: string
